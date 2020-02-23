@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Do you really want to delete this student?</h1>
+<div mat-dialog-content style=" padding: 0 px; margin: auto;">
+
+
+<mat-form-field class="full-width-input">
+    <input matInput type="text" placeholder="Name of user"
+        [(ngModel)]='deletingUser.name' required readonly>
+</mat-form-field>
+
+<mat-form-field class="full-width-input">
+        <input matInput type="text" placeholder="Phone of user"
+            [(ngModel)]='deletingUser.phone' required readonly>
+    </mat-form-field>
+
+    <mat-form-field class="full-width-input">
+        <input matInput type="text" placeholder="email of user"
+            [(ngModel)]='deletingUser.email' required readonly>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="onNoClick()">Cancel</button>
+    <button class="right-align"  mat-raised-button color ="primary"
+    [mat-dialog-close]="deletingUser">Delete</button>
+</div>

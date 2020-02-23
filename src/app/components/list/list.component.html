@@ -1,0 +1,56 @@
+
+
+  <div class="table">
+    <mat-header-cell *matHeaderCellDef>
+    </mat-header-cell>
+    
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+      <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+    
+      <mat-header-cell *matHeaderCellDef>    
+        <div class="example-header">
+          <mat-form-field>
+            <input matInput (keyup)="applyNameFilter($event.target.value)" placeholder="Name">
+          </mat-form-field>
+      </div>
+     </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef> 
+        <div class="example-header">
+          <mat-form-field>
+            <input matInput (keyup)="applyPhoneFilter($event.target.value)" placeholder="Phone">
+          </mat-form-field>
+      </div>  
+      </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.phone}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> 
+        <div class="example-header">
+          <mat-form-field>
+            <input matInput (keyup)="applyEmailFilter($event.target.value)" placeholder="Email">
+          </mat-form-field>
+      </div> 
+      </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.email}} 
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>  </mat-header-cell> 
+        <mat-cell *matCellDef="let user">
+
+          <button class="del" mat-raised-button color="warn" (click)="deleteUser(user)"><mat-icon aria-label="delete">delete</mat-icon></button>
+          </mat-cell>
+      </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+</div> 

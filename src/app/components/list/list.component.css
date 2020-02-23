@@ -1,0 +1,24 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+.table{
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60%;
+}
+table {
+    width: 100%;
+  }
+  .del{
+    width: 98%;
+    margin-left: 1%;
+    
+  }
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  .mat-cell:last-of-type{
+      max-width: 100%;
+  }
+  .mat-cell{
+      width: auto;
+  }
